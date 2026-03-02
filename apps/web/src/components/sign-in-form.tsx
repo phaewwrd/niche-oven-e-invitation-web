@@ -94,7 +94,7 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
             <GoogleIcon />
             <span className="text-sm font-semibold text-gray-700 group-hover:text-gray-900">Continue with Google</span>
           </button>
-
+          {/* 
           <button
             type="button"
             onClick={() =>
@@ -107,7 +107,7 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
           >
             <FacebookIcon />
             <span className="text-sm font-semibold text-gray-700 group-hover:text-[#1877F2]">Continue with Facebook</span>
-          </button>
+          </button> */}
         </div>
 
         {/* Divider */}
