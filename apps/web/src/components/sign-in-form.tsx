@@ -78,7 +78,6 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
           <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight">Welcome Back</h1>
           <p className="text-muted-foreground text-sm">Sign in to continue to your workspace</p>
         </div>
-
         {/* Social Login Buttons */}
         <div className="space-y-3">
           <button
