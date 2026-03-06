@@ -57,7 +57,7 @@ export function ThemeSelector({ themes, selectedThemeId, onSelect, redirectBaseP
                     >
                         <div className={`aspect-[3/4] rounded-[2rem] overflow-hidden border-4 transition-all duration-500 relative shadow-xl ${selectedThemeId === theme.id
                             ? "border-secondary scale-[1.02] shadow-secondary/20 ring-4 ring-secondary/10"
-                            : "border-white group-hover:border-secondary/30 group-hover:scale-[1.02] group-hover:shadow-2xl"
+                            : "border-card group-hover:border-secondary/30 group-hover:scale-[1.02] group-hover:shadow-2xl dark:shadow-primary/5"
                             }`}>
                             {theme.previewImageUrl ? (
                                 <div className="relative w-full h-full">
@@ -85,7 +85,7 @@ export function ThemeSelector({ themes, selectedThemeId, onSelect, redirectBaseP
 
                             {/* Hover Overlay */}
                             <div className="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                                <div className="bg-white p-4 rounded-full shadow-2xl scale-50 group-hover:scale-100 transition-all duration-500 transform">
+                                <div className="bg-card p-4 rounded-full shadow-2xl scale-50 group-hover:scale-100 transition-all duration-500 transform">
                                     <Maximize2 className="w-6 h-6 text-secondary" />
                                 </div>
                             </div>
@@ -108,9 +108,9 @@ export function ThemeSelector({ themes, selectedThemeId, onSelect, redirectBaseP
                         onClick={() => !isConfirming && setPreviewTheme(null)}
                     />
 
-                    <div className="relative w-full max-w-2xl bg-white/90 backdrop-blur-xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[95vh] animate-in zoom-in-95 slide-in-from-bottom-8 duration-500 border border-white/20">
+                    <div className="relative w-full max-w-2xl bg-card/90 backdrop-blur-xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[95vh] animate-in zoom-in-95 slide-in-from-bottom-8 duration-500 border border-border/50">
                         {/* Modal Header */}
-                        <div className="p-6 sm:p-8 border-b border-black/5 flex items-center justify-between shrink-0 bg-white/50">
+                        <div className="p-6 sm:p-8 border-b border-border/50 flex items-center justify-between shrink-0 bg-muted/30">
                             <div className="flex items-center gap-4">
                                 <div className="bg-secondary/20 p-3 rounded-2xl text-secondary shadow-lg shadow-secondary/10">
                                     <Sparkles className="w-6 h-6" />
@@ -122,15 +122,15 @@ export function ThemeSelector({ themes, selectedThemeId, onSelect, redirectBaseP
                             </div>
                             <button
                                 onClick={() => !isConfirming && setPreviewTheme(null)}
-                                className="p-3 hover:bg-black/5 rounded-full transition-all active:scale-90"
+                                className="p-3 hover:bg-muted rounded-full transition-all active:scale-90"
                             >
-                                <X className="w-6 h-6 text-primary/40" />
+                                <X className="w-6 h-6 text-muted-foreground" />
                             </button>
                         </div>
 
                         {/* Modal Content - Scrollable Image */}
-                        <div className="flex-1 overflow-y-auto p-4 sm:p-10 bg-black/5 custom-scrollbar">
-                            <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-white bg-white group/preview">
+                        <div className="flex-1 overflow-y-auto p-4 sm:p-10 bg-muted/10 custom-scrollbar">
+                            <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-border bg-card group/preview">
                                 {previewTheme.previewImageUrl ? (
                                     <Image
                                         src={previewTheme.previewImageUrl}
@@ -150,12 +150,12 @@ export function ThemeSelector({ themes, selectedThemeId, onSelect, redirectBaseP
                         </div>
 
                         {/* Modal Footer */}
-                        <div className="p-6 sm:p-10 border-t border-black/5 bg-white/80 backdrop-blur-md flex flex-col sm:flex-row gap-4 shrink-0">
+                        <div className="p-6 sm:p-10 border-t border-border/50 bg-card/80 backdrop-blur-md flex flex-col sm:flex-row gap-4 shrink-0">
                             <Button
                                 variant="ghost"
                                 disabled={isConfirming}
                                 onClick={() => setPreviewTheme(null)}
-                                className="w-full sm:flex-1 py-8 rounded-2xl font-black uppercase tracking-[0.2em] hover:bg-black/5 transition-all order-2 sm:order-1"
+                                className="w-full sm:flex-1 py-8 rounded-2xl font-black uppercase tracking-[0.2em] hover:bg-muted transition-all order-2 sm:order-1"
                             >
                                 Revisit Choices
                             </Button>

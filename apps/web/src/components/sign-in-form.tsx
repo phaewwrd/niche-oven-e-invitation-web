@@ -72,7 +72,7 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
-      <div className="bg-white/70 backdrop-blur-2xl p-8 sm:p-10 rounded-3xl border border-white/80 shadow-2xl shadow-black/5 space-y-7">
+      <div className="bg-card/70 backdrop-blur-2xl p-8 sm:p-10 rounded-3xl border border-border/50 shadow-2xl shadow-black/5 dark:shadow-primary/5 space-y-7 transition-colors duration-500">
         {/* Header */}
         <div className="text-center space-y-2">
           <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight">Welcome Back</h1>
@@ -89,10 +89,10 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
                 callbackURL: "/manage",
               })
             }
-            className="w-full flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl border border-gray-200 bg-white hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 active:scale-[0.98] shadow-sm hover:shadow group"
+            className="w-full flex items-center justify-center gap-3 py-3.5 px-4 rounded-2xl border border-border bg-card hover:bg-accent/50 hover:border-accent transition-all duration-200 active:scale-[0.98] shadow-sm hover:shadow group"
           >
             <GoogleIcon />
-            <span className="text-sm font-semibold text-gray-700 group-hover:text-gray-900">Continue with Google</span>
+            <span className="text-sm font-semibold text-foreground/70 group-hover:text-foreground">Continue with Google</span>
           </button>
           {/* 
           <button
@@ -113,10 +113,10 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
         {/* Divider */}
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200" />
+            <div className="w-full border-t border-border" />
           </div>
           <div className="relative flex justify-center text-xs">
-            <span className="bg-white/70 backdrop-blur-sm px-4 text-muted-foreground font-medium uppercase tracking-widest">or continue with email</span>
+            <span className="bg-background/80 backdrop-blur-sm px-4 text-muted-foreground font-medium uppercase tracking-widest text-[10px]">or continue with email</span>
           </div>
         </div>
 
@@ -141,7 +141,7 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
                     value={field.state.value}
                     onBlur={field.handleBlur}
                     onChange={(e) => field.handleChange(e.target.value)}
-                    className="h-12 rounded-xl border-gray-200 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-secondary/20 focus:border-secondary/30 transition-all placeholder:text-gray-300"
+                    className="h-12 rounded-xl border-border bg-muted/30 focus:bg-card focus:ring-2 focus:ring-ring/20 focus:border-ring/30 transition-all placeholder:text-muted-foreground/30"
                     placeholder="you@example.com"
                   />
                   {field.state.meta.errors.map((error) => (
@@ -164,7 +164,7 @@ export default function SignInForm({ onSwitchToSignUp }: { onSwitchToSignUp: () 
                     value={field.state.value}
                     onBlur={field.handleBlur}
                     onChange={(e) => field.handleChange(e.target.value)}
-                    className="h-12 rounded-xl border-gray-200 bg-gray-50/50 focus:bg-white focus:ring-2 focus:ring-secondary/20 focus:border-secondary/30 transition-all placeholder:text-gray-300"
+                    className="h-12 rounded-xl border-border bg-muted/30 focus:bg-card focus:ring-2 focus:ring-ring/20 focus:border-ring/30 transition-all placeholder:text-muted-foreground/30"
                     placeholder="••••••••"
                   />
                   {field.state.meta.errors.map((error) => (

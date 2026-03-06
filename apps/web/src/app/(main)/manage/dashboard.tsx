@@ -16,10 +16,10 @@ export default function ManageDashboard({ session, events, subscription, themes 
   return (
     <div className="space-y-6">
       {!events || events.length === 0 ? (
-        <div className="flex flex-col items-center justify-center p-6 sm:p-12 bg-white rounded-2xl border border-dashed border-gray-300 text-center">
-          <PlusCircle className="w-10 h-10 sm:w-12 sm:h-12 text-gray-400 mb-4" />
+        <div className="flex flex-col items-center justify-center p-6 sm:p-12 bg-card rounded-2xl border border-dashed border-border text-center">
+          <PlusCircle className="w-10 h-10 sm:w-12 sm:h-12 text-muted-foreground mb-4" />
           <h3 className="text-lg sm:text-xl font-semibold mb-2">No invitations yet</h3>
-          <p className="text-sm sm:text-gray-500 mb-6 max-w-[240px] sm:max-w-none mx-auto">Start by creating your first digital wedding invitation.</p>
+          <p className="text-sm sm:text-muted-foreground mb-6 max-w-[240px] sm:max-w-none mx-auto">Start by creating your first digital wedding invitation.</p>
           <a href="/manage/events/new/theme" className="w-full sm:w-auto bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-3.5 rounded-2xl font-bold shadow-xl shadow-primary/10 hover:brightness-110 transition-all flex items-center justify-center gap-2 active:scale-95">
             <PlusCircle className="w-5 h-5" />
             Create Now
@@ -32,8 +32,8 @@ export default function ManageDashboard({ session, events, subscription, themes 
             const displayImage = event.image1Url || eventTheme?.image1Url;
 
             return (
-              <div key={event.id} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
-                <div className="aspect-video bg-gray-100 relative overflow-hidden">
+              <div key={event.id} className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+                <div className="aspect-video bg-muted relative overflow-hidden">
                   {displayImage ? (
                     <Image src={displayImage} fill alt={event.groomName} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
                   ) : (
@@ -41,14 +41,14 @@ export default function ManageDashboard({ session, events, subscription, themes 
                   )}
                   <div className="absolute top-2 right-2 flex gap-2">
                     <a href={`/invitation/${event.slug}`} target="_blank" rel="noreferrer"
-                      className="p-2.5 bg-white/90 rounded-full hover:bg-white transition-colors shadow-sm" title="View Invitation">
+                      className="p-2.5 bg-card/90 rounded-full hover:bg-card transition-colors shadow-sm" title="View Invitation">
                       <ExternalLink className="w-4 h-4 text-primary" />
                     </a>
                   </div>
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-lg mb-1 truncate">{event.groomName} & {event.brideName}</h3>
-                  <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-5">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground mb-5">
                     <Calendar className="w-4 h-4" />
                     {new Date(event.eventDate).toLocaleDateString()}
                   </div>
